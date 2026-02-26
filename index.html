@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Friendship</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Background Music (Auto Play) -->
+    <audio id="backgroundMusic" autoplay loop muted>
+        <source src="OPP.mpeg" type="audio/mpeg">
+    </audio>
+
+    <!-- Floating Emojis -->
+    <div class="floating-emoji" style="top: 10%; left: 5%;">✨</div>
+    <div class="floating-emoji" style="top: 60%; right: 8%;">🦋</div>
+    <div class="floating-emoji" style="bottom: 20%; left: 10%;">☁️</div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content" data-aos="fade-up">
+            <div class="profile-img" data-aos="zoom-in" data-aos-delay="200">
+                <img src="suhana.jpeg" alt="Profile Image">
+            </div>
+            <h1 class="title" data-aos="fade-up" data-aos-delay="400">
+                <span class="typing-text"></span>
+            </h1>
+            <p class="tagline" data-aos="fade-up" data-aos-delay="600">My Friend 🌸</p>
+            <a href="#about" class="scroll-down" data-aos="fade-up" data-aos-delay="800">
+                <!-- <span>↓</span> -->
+            </a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
+            <div class="about-card" data-aos="fade-up" data-aos-delay="200">
+                <p class="bio">[Hi myself Toufik. I am your new friend.]</p>
+                <div class="decor-line"></div>
+                <p class="quote">"Friends are the family you choose."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Your Memories</h2>
+            <p class="section-subtitle" data-aos="fade-up">Photos you've captured</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="img-frame" onclick="openLightbox('suhana1.png')">
+                        <img src="suhana1.png" alt="Memory 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder"><i class="fas fa-image"></i><span>suhana1.png</span></div>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="caption"></div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="img-frame" onclick="openLightbox('suhana2.png')">
+                        <img src="suhana2.png" alt="Memory 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder"><i class="fas fa-image"></i><span>suhana2.png</span></div>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="caption"></div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="img-frame" onclick="openLightbox('suhana3.png')">
+                        <img src="suhana3.png" alt="Memory 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder"><i class="fas fa-image"></i><span>suhana3.png</span></div>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="caption"></div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="img-frame" onclick="openLightbox('suhana4.png')">
+                        <img src="suhana4.png" alt="Memory 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder"><i class="fas fa-image"></i><span>suhana4.png</span></div>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="caption"></div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="img-frame" onclick="openLightbox('suhana5.png')">
+                        <img src="suhana5.png" alt="Memory 5" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder"><i class="fas fa-image"></i><span>suhana5.png</span></div>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="caption"></div>
+                </div>
+                <div class="gallery-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="img-frame" onclick="openLightbox('suhana6.png')">
+                        <img src="suhana6.png" alt="Memory 6" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="placeholder"><i class="fas fa-image"></i><span>suhana6.png</span></div>
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="caption"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Music Section -->
+    <section id="music" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Your Song</h2>
+            <div class="music-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="music-icon">🎵</div>
+                <h3 class="song-title">OPPP</h3>
+                <p class="song-artist">by [Artist Name]</p>
+                <p class="song-desc">The song that reminds me of our friendship</p>
+                
+                <!-- Audio Player -->
+                <div class="audio-player">
+                    <audio id="specialSong" controls onplay="pauseBackground()" onpause="playBackground()">
+                        <source src="OPPP.mpeg" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secret Message Section -->
+    <section id="secret" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">A Secret Message</h2>
+            <div class="secret-box" data-aos="fade-up" data-aos-delay="200" onclick="toggleSecret()">
+                <div class="secret-icon">💌</div>
+                <p>Click to open</p>
+            </div>
+            <div class="secret-message" id="secretContent">
+                <p>[Tor bapare ami besi kichu jani na tai ar kichu likhlam na. Ata baki roilo pore bole debo............(Tobe aituku bolbo tui khub valo🙂)]</p>
+                <button onclick="toggleSecret()">Close</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Facts Section -->
+    <section id="facts" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Fun Facts</h2>
+            <div class="facts-grid">
+                <div class="fact-card" data-aos="fade-up" data-aos-delay="100">
+                    <span class="fact-num">01</span>
+                    <p>I love taking long walks and watching sunsets 🌅</p>
+                </div>
+                <div class="fact-card" data-aos="fade-up" data-aos-delay="200">
+                    <span class="fact-num">02</span>
+                    <p>Chocolate is my weakness 🍫</p>
+                </div>
+                <div class="fact-card" data-aos="fade-up" data-aos-delay="300">
+                    <span class="fact-num">03</span>
+                    <p>I believe in spreading kindness everywhere 💕</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p class="footer-msg" data-aos="fade-up">[Your closing message]</p>
+            <div class="footer-hearts" data-aos="fade-up">💖 💕 💗</div>
+            <p class="copyright">Made with love</p>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Background Music - Auto Play
+        const backgroundMusic = document.getElementById('backgroundMusic');
+        
+        // Unmute and try to play on page load
+        window.addEventListener('load', function() {
+            backgroundMusic.muted = false;
+            setTimeout(function() {
+                backgroundMusic.play().catch(e => {});
+            }, 500);
+        });
+        
+        // Also try on first user click
+        document.addEventListener('click', function() {
+            backgroundMusic.muted = false;
+            backgroundMusic.play().catch(e => {});
+        }, { once: true });
+        
+        // Pause background music when special song plays
+        function pauseBackground() {
+            backgroundMusic.pause();
+        }
+        
+        // Resume background music when special song stops
+        function playBackground() {
+            backgroundMusic.play().catch(e => console.log('Auto-play blocked'));
+        }
+        
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100,
+            easing: 'ease-out-cubic'
+        });
+
+        // Secret message toggle
+        function toggleSecret() {
+            const content = document.getElementById('secretContent');
+            const box = document.querySelector('.secret-box');
+            
+            if (content.style.display === 'block') {
+                content.style.opacity = '0';
+                setTimeout(() => {
+                    content.style.display = 'none';
+                    box.style.display = 'flex';
+                }, 300);
+            } else {
+                content.style.display = 'block';
+                setTimeout(() => {
+                    content.style.opacity = '1';
+                }, 10);
+                box.style.display = 'none';
+            }
+        }
+        
+        // Lightbox functions
+        function openLightbox(imgSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightboxImg.src = imgSrc;
+            lightbox.style.display = 'flex';
+        }
+        
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+        }
+        
+        // Close lightbox when clicking outside the image
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Floating emoji animation
+        document.querySelectorAll('.floating-emoji').forEach(emoji => {
+            let pos = 0;
+            let dir = 1;
+            const speed = 0.015 + Math.random() * 0.01;
+            
+            function float() {
+                pos += speed * dir;
+                if (pos > 15 || pos < -15) dir *= -1;
+                emoji.style.transform = `translateY(${pos}px)`;
+                requestAnimationFrame(float);
+            }
+            float();
+        });
+
+        // Typing effect for title
+        const title = "SUHANA JAMADER";
+        const typingEl = document.querySelector('.typing-text');
+        let charIndex = 0;
+
+        function typeTitle() {
+            if (charIndex < title.length) {
+                typingEl.textContent += title.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeTitle, 150);
+            }
+        }
+        
+        setTimeout(typeTitle, 1500);
+    </script>
+</body>
+</html>
